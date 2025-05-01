@@ -22,7 +22,7 @@ function Register() {
                 setTimeout(() => navigate('/login'),2000);
             }
         }catch(error){
-            const msg = error.response?.data?.message || "Something went wrong";
+            const msg = error.response?.data?.message;
             setErrorMsg(msg);
             console.error("Error in handleSubmit",error.message);
         }
