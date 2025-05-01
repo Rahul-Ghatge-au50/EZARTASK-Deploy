@@ -18,7 +18,7 @@ function TaskList() {
         try{
             const token = localStorage.getItem('token');
             const userId = localStorage.getItem("userId");
-            let Url = `http://localhost:8000/api/tasks/${userId}`;
+            let Url = `https://ezartask.onrender.com/api/tasks/${userId}`;
 
             if(status) {Url += `?status=${status}`};
             if(title) {Url += `?title=${title}`};
@@ -42,7 +42,7 @@ function TaskList() {
     const handleDelete = async (id) => {
         try{
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:8000/api/tasks/${id}`,{
+            await axios.delete(`https://ezartask.onrender.com/api/tasks/${id}`,{
                 headers:{
                     Authorization:`Bearer ${token}`,
                 }

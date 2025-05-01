@@ -19,7 +19,7 @@ function Login() {
                 setErrorMsg('Email and Password is required');
                 return
             }
-            const res = await axios.post('http://localhost:8000/api/auth/login',{email,password});
+            const res = await axios.post('https://ezartask.onrender.com/api/auth/login',{email,password});
 
             if(res.status == 200){
                 localStorage.setItem('token',res.data.token);

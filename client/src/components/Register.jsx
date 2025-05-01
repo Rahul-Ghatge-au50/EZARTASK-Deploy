@@ -15,16 +15,15 @@ function Register() {
         try{
             setErrorMsg('')
             setSuccessMsg('')
-            const res = await axios.post('http://localhost:8000/api/auth/register',{email,password,username});
-            
+            const res = await axios.post('https://ezartask.onrender.com/api/auth/register',{email,password,username});
             
             if(res.status == 200){
                 setSuccessMsg("Registerd successfully");
                 setTimeout(() => navigate('/login'),2000);
-            }else{
-                setErrorMsg("Error in register");
-             }
+            }
         }catch(error){
+            const msg = error.response?.data?.message || "Something went wrong";
+            setErrorMsg(msg);
             console.error("Error in handleSubmit",error.message);
         }
     }

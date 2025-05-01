@@ -21,7 +21,7 @@ function TaskForm() {
         try{
             
             const token = localStorage.getItem('token');
-            const res = await axios.get(`http://localhost:8000/api/tasks/getSingle/${id}`,{
+            const res = await axios.get(`https://ezartask.onrender.com/api/tasks/getSingle/${id}`,{
                 headers:{
                     Authorization:`Bearer ${token}`,
                 },
@@ -52,7 +52,7 @@ function TaskForm() {
             task.userId = userId;
             if(id){
                 // task.userId = userId;
-                let res = await axios.put(`http://localhost:8000/api/tasks/${id}`,task,{
+                let res = await axios.put(`https://ezartask.onrender.com/api/tasks/${id}`,task,{
                     headers:{
                         Authorization:`Bearer ${token}`,
                     },
@@ -64,7 +64,7 @@ function TaskForm() {
                 }
             }else{
                 // task.userId = userId;
-                await axios.post('http://localhost:8000/api/tasks/',task,{
+                await axios.post('https://ezartask.onrender.com/api/tasks/',task,{
                     headers:{
                         Authorization:`Bearer ${token}`,
                     },
